@@ -21,9 +21,9 @@ def run_tracker(tracker_name, tracker_param, video_name=None, dataset_name='otb'
         debug: Debug level.
         threads: Number of threads.
     """
-    dataset = get_dataset(dataset_name)
-    if sequence is not None:
-        dataset = [dataset[sequence]]
+#    dataset = get_dataset(dataset_name)
+#    if sequence is not None:
+#        dataset = [dataset[sequence]]
     tracker = Tracker(tracker_name, tracker_param, dataset_name, run_id=None, params_dict=params_dict)
 
     tracker.run_video(video_name, optional_box=None, debug=None, visdom_info=None, save_results=False)

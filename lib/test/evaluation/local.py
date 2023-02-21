@@ -13,7 +13,7 @@ def local_env_settings():
     settings.result_plot_path = './results/result_plots/'
     settings.results_path = './results/tracking_results' 
     settings.trackingnet_path = ''
-    settings.uav_path =''
+    settings.uav_path ='/home/user/Documents/Computer Vision/data/Dataset_UAV123/UAV123'
     settings.vot_path = ''
 
     return settings
