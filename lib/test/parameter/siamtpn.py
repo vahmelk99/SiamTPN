@@ -1,16 +1,16 @@
 import os
 
 from lib.test.utils import TrackerParams
-from lib.test.evaluation.environment import env_settings
+# from lib.test.evaluation.environment import env_settings
 from lib.config.default import cfg, update_config_from_file
 
 
 def parameters(yaml_name: str, epoch=100):
     params = TrackerParams()
-    save_dir = env_settings().save_dir
+    # save_dir = env_settings().save_dir
     # update default config from yaml file
     # print('yaml name', yaml_name)
-    yaml_file = './lib/experiments/' + yaml_name + '.yaml'
+    yaml_file = os.path.dirname(os.path.abspath(__file__)).replace('test/parameter', 'experiments/') + yaml_name + '.yaml'
     update_config_from_file(cfg, yaml_file)
     params.cfg = cfg
 
@@ -22,7 +22,7 @@ def parameters(yaml_name: str, epoch=100):
     #params.multiobj_mode = 'parallel'
 
     # Network checkpoint path
-    params.checkpoint = "results/checkpoints/train/%s/SiamTPN_ep%04d.pth.tar" % (yaml_name, epoch)
+    params.checkpoint = os.path.abspath(__file__).split('lib')[0] + "results/checkpoints/train/%s/SiamTPN_ep%04d.pth.tar" % (yaml_name, epoch)
 
     # whether to save boxes from all queries
     params.save_all_boxes = False
