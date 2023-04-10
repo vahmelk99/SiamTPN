@@ -20,7 +20,7 @@ pip install timm
 
 ## install openvino and onnx
 ## https://github.com/intel/onnxruntime/releases/tag/v3.1
-# pip install onnx
-# pip install onnxruntime_openvino-1.9.0-cp37-cp37m-linux_x86_64.whl #(change to corresponding version)
+pip install onnx
+pip install onnxruntime_openvino-1.9.0-cp37-cp37m-linux_x86_64.whl #(change to corresponding version)
 
 

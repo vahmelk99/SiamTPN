@@ -5,10 +5,11 @@ import os
 class EnvSettings:
     def __init__(self):
         test_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+
         self.results_path = '{}/tracking_results/'.format(test_path)
         self.segmentation_path = '{}/segmentation_results/'.format(test_path)
         self.network_path = '{}/networks/'.format(test_path)
-        self.result_plot_path = '{}/saved_videos/'.format(test_path)
+        self.result_plot_path = '{}/result_plots/'.format(test_path)
         self.otb_path = ''
         self.nfs_path = ''
         self.uav_path = ''

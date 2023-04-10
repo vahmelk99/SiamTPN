@@ -88,7 +88,7 @@ class ShuffleNetV2(nn.Module):
                  pretrain=True,
                  norm_layer=nn.BatchNorm2d):
         super(ShuffleNetV2, self).__init__()
-        # print('model size is ', model_size)
+        print('model size is ', model_size)
 
         self.stage_repeats = [4, 8, 4]
         self.model_size = model_size
@@ -176,7 +176,7 @@ class ShuffleNetV2(nn.Module):
             url = model_urls['shufflenetv2_{}'.format(self.model_size)]
             if url is not None:
                 pretrained_state_dict = model_zoo.load_url(url)
-                # print('=> loading pretrained model {}'.format(url))
+                print('=> loading pretrained model {}'.format(url))
                 self.load_state_dict(pretrained_state_dict, strict=False)
 
 

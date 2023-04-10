@@ -21,7 +21,7 @@ def parameters(yaml_name: str, epoch=100):
     #params.multiobj_mode = 'parallel'
 
     # Network checkpoint path
-    params.checkpoint = "results/checkpoints/train/%s/SiamTPN_ep%04d.pth.tar" % (yaml_name, epoch)
+    params.checkpoint = None
 
     # whether to save boxes from all queries
     params.save_all_boxes = False
