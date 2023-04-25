@@ -13,15 +13,13 @@ def run_video():
     while True:
         state = [-1] * 4
         bbox, frame, initState = yield state
-        tracker.initialize(frame, { 'init_bbox': bbox })
-        print('initinginstidedfsd')
+        tracker.initialize(frame, { 'init_bbox': [bbox[0], bbox[1], bbox[2] - bbox[0], bbox[3] - bbox[1]] })
         while True:
             bbox, frame, initState = yield state
             if initState: break
             out = tracker.track(frame)
-            state = [int(s) for s in out['target_bbox']]
-            # state = [round(s) for s in [state[0], state[1], state[2] + state[0], state[3] + state[1]]]
-
+            state = out['target_bbox']
+            state = list(map(round, [state[0], state[1], state[2] + state[0], state[3] + state[1]]))
 
 def run():
     return run_video()

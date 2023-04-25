@@ -1,3 +1,6 @@
+import os
+import sys
+env_path = os.path.dirname(__file__)
 from easydict import EasyDict as edict
 from numpy.core.numeric import False_
 import yaml
@@ -153,7 +156,7 @@ def _update_config(base_cfg, exp_cfg):
 
 def update_config_from_file(cfg, filename):
     exp_config = None
-    with open(filename) as f:
+    with open(os.path.join(env_path, filename)) as f:
         exp_config = edict(yaml.safe_load(f))
         _update_config(cfg, exp_config)
 

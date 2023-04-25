@@ -23,7 +23,7 @@ class SiamTPN(BaseTracker):
         self.network.eval()
         self.preprocessor = Preprocessor(cpu=params.cpu)
         # for debug
-        self.debug = self.params.debug
+        self.debug = False
         self.frame_id = 0
         self.grids = self._generate_anchors(self.cfg.MODEL.ANCHOR.NUM, self.cfg.MODEL.ANCHOR.FACTOR, self.cfg.MODEL.ANCHOR.BIAS)
         self.window = self._hanning_window(self.cfg.MODEL.ANCHOR.NUM)
